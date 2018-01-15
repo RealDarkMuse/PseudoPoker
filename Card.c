@@ -74,6 +74,7 @@ void render_card(struct Card card)
 			break;
 		default:
 			value_name = "N/A";
+			printf("\n CARD VALUE WAS: %d ", card.value);
 			break;
 	}
 
@@ -93,6 +94,7 @@ void render_card(struct Card card)
 			break;
 		default:
 			suit_name = "N/A";
+			printf("CARD SUIT WAS: %s", card.suit);
 			break;
 	}
 	printf("[%s of %s]", value_name, suit_name);

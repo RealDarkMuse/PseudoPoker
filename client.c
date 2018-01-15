@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
 		printf("Receiving deck...\n");
 		printf("\t received %zd bytes\n", read(myFD, myDeck, 1024));
 		close(myFD);
+
 		while (chips > 0)
 		{
 			if (chips < 10)
@@ -82,7 +83,7 @@ int main(int argc, char *argv[])
 					sscanf(line, "%d", &bet);
 				}
 
-				qsort(myHand, 4, sizeof(struct Card *), comparator);
+				qsort((void *) myHand, 4, sizeof(myDeck[0]), comparator);
 				show_deck(myHand, 4);
 
 				if (is_straight(myHand) == 1)
